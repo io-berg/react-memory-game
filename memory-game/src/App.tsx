@@ -23,7 +23,8 @@ function App() {
         setScore(0);
         setClickedImages([]);
         setDisplayWin(false);
-        setCards(shuffleDeck(images));
+        const shuffledImages = shuffleDeck(images);
+        setCards(shuffledImages.map((img, id) => ({ img, id })));
     }
 
     const handleClick = (id: number) => {
